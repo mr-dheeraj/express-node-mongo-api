@@ -5,7 +5,7 @@ dotenv.config()
 import morgan from 'morgan'
 import helmet from 'helmet'
 import connectDB from './config/connectDB.js'
-import userRouter from './route/user.route.js'
+import shipmentsRouter from './route/shipments.route.js'
 
 
 const app = express()
@@ -31,7 +31,7 @@ app.get("/",(request,response)=>{
     })
 })
 
-app.use('/api/user',userRouter)
+app.use('/shipments',shipmentsRouter)
 
 connectDB().then(()=>{
     app.listen(PORT,()=>{
